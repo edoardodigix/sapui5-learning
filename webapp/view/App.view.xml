@@ -1,0 +1,10 @@
+<mvc:View
+    controllerName="sap.training.exc.controller.App"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"> <!-- Default namespace: we can access the Text object of the namespace just with <Text> and not <alias:Text> --> 
+
+        <Text text="Hello World!"/> <!-- Properties are added as attributes of the XML tag, list of properties for an object can be seen using "ctrl+space" -->
+
+        <Button text="Say Hello" press=".onSayHello"/> <!-- Names that start with a dot are assumed to be methods available in the controller --> 
+
+</mvc:View>
