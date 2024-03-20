@@ -1,5 +1,6 @@
 <mvc:View controllerName="sap.training.exc.controller.Overview"
-          xmlns:f="sap.ui.layout.form" xmlns:core="sap.ui.core"
+          xmlns:f="sap.ui.layout.form"
+          xmlns:core="sap.ui.core"
           xmlns:mvc="sap.ui.core.mvc"
           xmlns="sap.m">
 
@@ -19,37 +20,65 @@
                         <f:content>
                             <core:Title text="General Data"/>
                                 <Label text="Form"/>
-                                <Input value=""/>
+                                <Input value="{customer>/Form}"/>
 
                                 <Label text="Customer Name"/>
-                                <Input value=""/>
+                                <Input value="{customer>/CustomerName}"/>
                                
                                 <Label text="Discount"/>
-                                <Input value=""/>
+                                <Input value="{customer>/Discount}"/>
 
                             <core:Title text="Address Data"/>
                                 <Label text="Street"/>
-                                <Input value=""/>
+                                <Input value="{customer>/Street}"/>
 
                                 <Label text="Post Code"/>
-                                <Input value=""/>
+                                <Input value="{customer>/PostCode}"/>
 
                                 <Label text="City"/>
-                                <Input value=""/>
+                                <Input value="{customer>/City}"/>
 
                                 <Label text="Country"/>
-                                <Input value=""/>                  
+                                <Input value="{customer>/Country}"/>                  
 
                             <core:Title text="Contact Data"/>
                                 <Label text="Email"/>                    
-                                <Input value=""/>
+                                <Input value="{customer>/Email}"/>
 
                                 <Label text="Telephone"/>
-                                <Input value=""/>                     
+                                <Input value="{customer>/Telephone}"/>                     
                         </f:content>
                     </f:SimpleForm>
                 </content>
-            </Panel> 
+            </Panel>
+            <Table items="{customer>/Customers}">
+                <columns>
+                    <Column>
+                        <header>
+                            <Text text="Customer Name"/>
+                        </header>
+                    </Column>
+                    <Column>
+                        <header>
+                            <Text text="Street"/>
+                        </header>
+                    </Column>
+                    <Column>
+                        <header>
+                            <Text text="City"/>
+                        </header>
+                    </Column>
+                </columns>
+                <items>
+                    <ColumnListItem>
+                        <cells>
+                            <Text text="{customer>CustomerName}"/>
+                            <Text text="{customer>Street}"/>
+                            <Text text="{customer>City}"/>
+                        </cells>
+                    </ColumnListItem>
+                </items>
+            </Table>
         </content>
     </Page>
    
